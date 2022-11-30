@@ -3,7 +3,6 @@ const CompressionPlugin = require("compression-webpack-plugin")
 var express = require("express");
 var expressStaticGzip = require("express-static-gzip");
 var app = express();
-
 app.use("/", expressStaticGzip("dist"));
 let sassImplementation;
 try {
