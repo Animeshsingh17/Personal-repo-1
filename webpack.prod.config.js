@@ -1,9 +1,4 @@
 const path = require('path');
-const CompressionPlugin = require("compression-webpack-plugin")
-var express = require("express");
-var expressStaticGzip = require("express-static-gzip");
-var app = express();
-app.use("/", expressStaticGzip("dist"));
 let sassImplementation;
 try {
   // tslint:disable-next-line:no-implicit-dependencies
@@ -14,11 +9,6 @@ try {
 
 module.exports = {
   // Fix for: https://github.com/recharts/recharts/issues/1463
-  plugins:[
-    new CompressionPlugin({
-      algorithm: "gzip"
-    })
-  ],
   node: {
     fs: 'empty'
   },
